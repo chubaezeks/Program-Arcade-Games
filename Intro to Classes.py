@@ -35,3 +35,30 @@ def NoLongerFriends(my_exes):
 
 display_character(my_ex)
 display_character(my_ex_lover)
+
+
+#Practicing inheritance
+#Assume you were asked to code a game with a boat
+#In this game, the boats are docekd or undocked
+#And different actions are made depending on their state
+
+class Boat():
+
+#When creating a class, start with teh attributes
+    model ="Yatch"
+    weight = "50 tons"
+    docked = True
+
+    def docked():
+        if docked:
+            print "Already docked"
+        else:
+            docked = True
+            print "docking"
+
+    def undocked():
+        if not(docked):
+            print "You're not even docked yet"
+        else:
+            docked = True
+            prit "undocking"
