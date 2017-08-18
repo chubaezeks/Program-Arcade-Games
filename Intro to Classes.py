@@ -37,28 +37,33 @@ display_character(my_ex)
 display_character(my_ex_lover)
 
 
-#Practicing inheritance
-#Assume you were asked to code a game with a boat
-#In this game, the boats are docekd or undocked
-#And different actions are made depending on their state
+# Practicing inheritance
+# Assume you were asked to code a game with a boat
+# In this game, the boats are docekd or undocked
+# And different actions are made depending on their state
 
 class Boat():
+# When creating a class, start with the attributes
+    def __init__(self):
+        self.model ="Yatch"
+        self.weight = "50 tons"
+        self.docked = True
 
-#When creating a class, start with teh attributes
-    model ="Yatch"
-    weight = "50 tons"
-    docked = True
 
-    def docked():
-        if docked:
+    def docked(self):
+        if self.docked:
             print "Already docked"
         else:
-            docked = True
+            self.docked = True
             print "docking"
 
-    def undocked():
-        if not(docked):
+    def undocked(self):
+        if not self.docked:
             print "You're not even docked yet"
         else:
-            docked = True
+            self.docked = True
             prit "undocking"
+
+class Submarine(Boat):
+    def submerge(self):
+        print "submerge"
