@@ -191,3 +191,157 @@ for row in rows:
 
 
     plt.show()
+
+
+    # Example 7
+    """
+    How to do a bar chart
+    """
+
+    import matplotlib.pyplot as plt
+
+    x = [1,2,3,4]
+    y = [1,3,8,4]
+
+    plt.bar(x,y)
+
+    plt.ylabel('Element Value')
+    plt.xlabel('Element')
+
+    plt.show()
+
+
+    # Example 8
+    """
+    How to add x-axis value label
+    """
+
+    import matplotlib.pyplot as plt
+
+    x = [1,2,3,4]
+    y = [1,3,8,4]
+
+    plt.plot(x,y)
+
+        # You add the labels first as a list
+        # To assign it to the x-axis, you call the xticks property and assign labels to it as an attribute
+    labels = ['Frogs', 'Hogs', 'Bogs', 'Slogs']
+    plt.xticks(x,labels)
+
+    plt.ylabel('ELement Value')
+    plt.xlabel('Element')
+
+    plt.show()
+
+
+    # Example 9
+    """
+    Using the numpy package to graph a function over a range of numbers
+    """
+
+    import numpy
+    import matplotlib.pyplot as plt
+
+        # to get the values of x, get the arange function and pass the following numbers through it
+        # to get the y values, pass whatever you're trying to get through the sin function.
+        #You can also call other attributes of numpy within the function
+
+    x = numpy.arange(0.0, 2.0, 0.011)
+    y = numpy.sin(2 * numpy.pi * x)
+
+    plt.ylabel('Element Value')
+    plt.xlabel('Element')
+
+    plt.show()
+
+
+    # Example 10
+    """
+    Use 'fill' to fill in the graph
+    """
+
+    import numpy
+    import matplotlib.pyplot as plt
+
+    x = numpy.arange(0.0, 2.0, 0.011)
+    y = numpy.sin(2 * numpy.pi * x)
+
+    # Blue stands for blue. 'Alpha' stands for the transparency
+    plt.fill(x,y, b, alpha = 0.5)
+
+    plt.ylabel('Element Value')
+    plt.xlabel('Element')
+
+    plt.show()
+
+
+    # Example 11
+    """
+    Create a pie chart.
+    """
+
+    # Labels for the pie chart
+    labels = ["Ameerah", "Shari", "Zainab", "Oge", "Priya"]
+
+    # Sizes for each label
+    sizes = [12, 21, 11, 9, 34]
+
+    # colors
+    # Get the colors from this list
+    colors = ['blue', 'red', 'green', 'purple', 'brown']
+
+    # How far out to pull a slice
+    explode = (0, 0, 0, 0.01, 0)
+
+    # Set aspect ratio to be equal so the pie is drawn as a circle
+    plt.axis('equal')
+
+
+    # Finally plot the chart
+    plt.pie(sizes, explode=explode, labels=labels, colors=colors, autopct='%1.1%%', shadows = True, startangle=90)
+
+    plt.show()
+
+
+    #Example 12
+    """
+    Create a candlestick chart for a stock
+    """
+
+    import matplotlib.pyplot as plt
+    from matplotlib.dates import DateFormatter, WeekdayLocator,\
+         DayLocator, MONDAY
+    from matplotlib.finance import quotes quotes_historical_yahoo_ohlc, candlestick_ohlc
+
+    # Grab the stock data between these dates
+    date1 = (2014, 10, 13)
+    date2 = (2014, 11, 13)
+
+    # Go to the web and pull the stock info
+    quotes = quotes_historical_ohlc('AAPL', date1, date2)
+    if len(quotes) == 0:
+        raise SystemExit
+
+    # Set up the graph
+    fig, ax = plt.subplots()
+    fig.subplots_adjust(bottom=0.2)
+
+    # Major ticks on Mondays
+    mondays = WeekdayLocator(MONDAY)
+    ax.xaxis.set_major_locator(mondays)
+
+    # Minor ticks on all days
+    alldays = DayLocator()
+    ax.aaxis.set_minor_locator(alldays)
+
+    # Format the days
+    weekFormatter = DateFormatter('%b %d') # e.g., Jan 12
+    ax.xaxis.set_major_formatter(weekFormatter)
+    ax.xaxis_date()
+
+    candlestick_ohlc(ax, quotes, width=0.6)
+
+    ax.autoscale_view()
+    plt.setp(plt.gca().get_xticklabels(), rotation=45, horizontalalignment='right')
+
+    plt.show()
