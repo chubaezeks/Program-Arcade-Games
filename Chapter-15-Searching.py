@@ -39,3 +39,26 @@ if i < len(name_list):
     print( "The name is at posiiton", i)
 else:
     print( "The name was not in the list.")
+
+
+
+# Variations on the linear Search
+Alien class
+class Alien:
+    """Class that defines an alien"""
+    def __init__(self, color, weight):
+        """ Constructor. Set name and color"""
+        self.color = color
+        self.weight = weight
+
+
+# To create a function to chec if it has the property we're looking.
+# In this case,the
+
+def has_property(my_alien):
+    """ Check to see if an item has a property.
+    In this case, is the alien green? """
+    if my_alien.color.upper() = "GREEN":
+        return True
+    else:
+        return False     
