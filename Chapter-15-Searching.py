@@ -28,6 +28,14 @@ for name in name_list:
     print(name)
 
 
-
-
 #Linear Search
+key = "Morgiana the Shrew"
+
+i = 0
+while i < len(name_list) and name_list[i] != key:
+    i += 1
+
+if i < len(name_list):
+    print( "The name is at posiiton", i)
+else:
+    print( "The name was not in the list.")
