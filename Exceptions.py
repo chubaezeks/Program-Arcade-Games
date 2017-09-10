@@ -46,3 +46,36 @@ except ZeroDivisionError:
     print("Division by zero error")
 except:
     print("Unexpected error:", sys.exc_info()[0])
+
+
+
+# Exception Objects
+# When you're linking to more information about the error, use the 'as' keyword
+try:
+    x = 5 / 0
+except ZeroDivisionError as e:
+    print(e)
+
+
+# Exception may be generated with the raise command
+def get_input():
+    user_input = input("Enter Something: ")
+    if len(user_input) == 0:
+        raise IOError("Users entered nothing")
+
+get_input()
+
+
+# Write down the process in words
+# We're writing code that asks a user for input,
+# if it happens that the user entered nothing
+# Rather than run an error, it notifies us through the raise command
+
+# Now write it in code:
+    # Create variable
+def get_input():
+    user_input = input("Enter your password: ")
+    if len(user_input) == 0:
+        raise IOError("You didn't enter a password. Please try again.")
+
+get_input
