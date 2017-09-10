@@ -5,6 +5,7 @@ try:
     x = 5/0
 except:
     print("Error dividing by zero")
+# Summary: "Try" lets you run code that might be contain an error, "except" lets you catch the error.
 
 # Handling number conversion errors
 try:
@@ -58,6 +59,7 @@ except ZeroDivisionError as e:
 
 
 # Exception may be generated with the raise command
+# Use the "if" "raise" format if possible as this reduces drag on code
 def get_input():
     user_input = input("Enter Something: ")
     if len(user_input) == 0:
@@ -79,3 +81,7 @@ def get_input():
         raise IOError("You didn't enter a password. Please try again.")
 
 get_input
+
+
+# In a simple path code, limit the use of exceptions when you can run if statements instead.
+#
