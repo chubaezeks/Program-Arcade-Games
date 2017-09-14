@@ -84,4 +84,16 @@ get_input
 
 
 # In a simple path code, limit the use of exceptions when you can run if statements instead.
-#
+
+
+
+
+
+# Let's have a refresher practice run on writing up exceptions
+
+try:
+    x = ("Yes, I'm a string beeches")
+    number = int(x)
+
+except:
+    print ("You input a string instead of an integer")
